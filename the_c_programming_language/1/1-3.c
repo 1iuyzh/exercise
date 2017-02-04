@@ -1,8 +1,7 @@
 #include <stdio.h>
-
-/* 当 fahr = 0, 20, ..., 300 时，分别
- * 打印华氏温度和摄氏温度对照表  */
-
+/*
+当 fahr = 0, 20, ..., 300 时，分别打印华氏温度和摄氏温度对照表
+*/
 int main() {
     float fahr, celsius;
     float lower, upper, step;
