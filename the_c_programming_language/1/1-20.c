@@ -1,6 +1,6 @@
 /* detab  */
 #include <stdio.h>
-#define TAB 8   /* 每8个位置处出现一个制表符终止位 */
+#define TAB 8   /* 每TAB个位置处出现一个制表符终止位 */
 
 int main()
 {
