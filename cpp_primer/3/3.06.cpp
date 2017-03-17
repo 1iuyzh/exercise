@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using std::string;
 using std::cin;
@@ -7,8 +8,9 @@ using std::cout;
 using std::endl;
 
 int main(void) {
-    string word;
-    while (cin >> word)
-        cout << word << endl;
+    string s("Hello World!!!");
+    for (auto &c : s)
+        c = 'X';
+    cout << s << endl;
     return 0;
 }
