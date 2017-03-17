@@ -1,4 +1,6 @@
 nand2tetris
 .vscode
+.vs
+*.o
 *.exe
 
