@@ -2,8 +2,9 @@
 #include <string> // 标准库类型string
 #include <cstdlib> // 定义NULL
 #include <cctype> // 处理字符的函数, 比如isalpha(c), toupper(c)等
-#include <vector>
 #include <cstddef> // 定义size_t: 数组下标类型, 定义ptrdiff_t: 指针相减的类型
+#include <vector>
+#include <iterator> // 标准库函数begin(), end()
 
 using std::cin;
 using std::cout;

@@ -13,3 +13,28 @@ bool is_empty(const string &s) {
     return s.empty();
 }
 ```
+## 6.19
+```c++
+double calc(double);
+int count(const string &, char);
+int sum(vector<int>::iterator, vector<int>::iterator, int);
+vector<int> vec(10);
+//Questions
+calc(23.4, 55.1); // illegal
+count("abcda", 'a'); // legal
+calc(66); // legal
+sum(vec.begin(), vec.end(), 3.8); // legal
+```
+## 6.24
+```c++
+void print(const int ia[10]) {
+    for (size_t i = 0; i != 10; ++i)
+        cout << ia[i] << endl;
+}
+```
+const int ia[10] is actually same as const int*  
+```c++
+void print(const int (&ia)[10]) {
+    /*...*/
+}
+```
