@@ -3,4 +3,5 @@ nand2tetris
 .vs
 *.o
 *.exe
+test.cpp
 
