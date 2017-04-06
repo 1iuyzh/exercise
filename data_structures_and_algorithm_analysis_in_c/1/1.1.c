@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h> // 随机数函数srand(), rand()
-#include <time.h> // 返回时间函数time()
+#include <time.h> // 返回当前时间time()
 #include <limits.h> // int类型的最大值INT_MAX
 
-#define N 10000
+#define N 50000
 
 int s[N];
 
