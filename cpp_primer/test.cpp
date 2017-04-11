@@ -17,7 +17,9 @@ using std::initializer_list;
 // vector<int>::size_type: v.size()的返回类型, vector<int>的下标类型
 // string::iterator, string::const_iterator: string的迭代器类型
 // vector<T>::iterator, vector<T>::const_iterator: vector<T>的迭代器类型
-// initializer_list<T>
+// initializer_list<T>: 参数类型为T的可变形参
+// initializer_list<T> il, il.begin()和il.end()返回的是指针
+
 int main() {
     int a = 1;
     int *p = &a;
