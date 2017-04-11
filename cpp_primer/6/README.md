@@ -50,3 +50,15 @@ int main() {
 }
 ```
 legal
+## 6.34
+```c++
+int factorial(int val) {
+    if (val != 0)
+        return factorial(val-1) * val;
+    return 1;
+}
+```
+if val > 0, legal
+if val < 0, illegal
+## 6.35
+val这个参数一直被递归函数使用, 在递归过程中不能修改val
