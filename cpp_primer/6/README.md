@@ -62,3 +62,20 @@ if val > 0, legal
 if val < 0, illegal
 ## 6.35
 val这个参数一直被递归函数使用, 在递归过程中不能修改val
+## 6.36
+```c++
+string (&func())[10];
+```
+## 6.37
+```c++
+// 类型别名
+typedef string arrR[10];
+using arrR = string[10];
+arrR &func();
+// 尾置返回类型
+auto func() -> string (&)[10];
+// decltype
+string s[10] = {...};
+decltype(s) &func();
+```
+I choose first one, because it is more simple.
