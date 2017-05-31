@@ -94,3 +94,10 @@ int *reset(int *);
 double *reset(double *);
 // legal
 ```
+## 6.40
+(a) legal  
+(b) illegal
+## 6.41
+(a) illegal  
+(b) legal  
+(c) legal, but not match
