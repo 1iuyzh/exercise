@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-using std::cin; using std:cout; using std::endl;
+using std::cin; using std::cout; using std::endl;
 
 struct Sales_data {
     //构造函数
