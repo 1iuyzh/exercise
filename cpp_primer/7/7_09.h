@@ -1,5 +1,5 @@
-#ifndef Cpp_7_9_h
-#define Cpp_7_9_h
+#ifndef cpp_7_9_h
+#define cpp_7_9_h
 
 #include <string>
 #include <iostream>
