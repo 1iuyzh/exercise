@@ -1,8 +1,19 @@
+#ifndef cpp_7_12_h
+#define cpp_7_12_h
+
 #include <iostream>
 #include <string>
-using std::cin; using std::cout; using std::endl;
+using std::cin; using std:cout; using std::endl;
 
 struct Sales_data {
+    //构造函数
+    Sales_data() = default;
+    Sales_data(const std::string &s):bookNo(s) {}
+    Sales_data(const std::string &s, unsigned n, double p):bookNo(s), units_sold(n), revenue(p*n) {}
+    Sales_data(std::istream &is) {
+        read(is, *this);
+    }
+    // 之前的成员
     std::string bookNo;
     unsigned units_sold = 0;
     double revenue = 0.0;
@@ -43,23 +54,4 @@ Sales_data add(Sales_data const& lhs, Sales_data const& rhs) {
     return sum;
 }
 
-int main() {
-    Sales_data total;
-    if (read(cin, total)) {
-        Sales_data trans;
-        while (read(cin, trans)) {
-            if (total.isbn() == trans.isbn())
-                total.combine(trans);
-            else {
-                print(cout, total) << std::endl;
-                total = trans;
-            }
-        }
-        print(cout, total) << std::endl;
-    }
-    else {
-        std::cerr << "No data?!" << endl;
-        return -1;
-    }
-    return 0;
-}
+#endif
