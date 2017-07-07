@@ -33,7 +33,7 @@ char Screen::get(pos r, pos c) const {
     return contents[row + c];
 }
 
-class Windows_mgr {
+class Window_mgr {
 private:
     std::vector<Screen> screens{Screen(24, 80, ' ')};
 };
