@@ -60,3 +60,14 @@ void f1(forward_list<string> &flst, string const &s1, string const &s2) {
 ```
 ## 9.30
 默认构造
+## 9.32
+iter指向尾元素
+## 9.34
+死循环
+## 9.36
+不能
+## 9.37
+list不是连续存储元素  
+array的size是固定的
+## 9.48
+string::npos
