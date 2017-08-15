@@ -45,3 +45,18 @@ it4: vector<int>::const_iterator
 ## 9.12
 迭代器对: 允许类型转换, 可以范围拷贝  
 容器: 不允许类型转换, 全部拷贝
+## 9.28
+```cpp
+void f1(forward_list<string> &flst, string const &s1, string const &s2) {
+    auto prev = flst.before_begin();
+    for (auto curr = flst.begin(); curr != flst.end(); prev = curr++) {
+        if (*curr == s1) {
+            flst.insert_after(curr, s2);
+            return;
+        }
+    }
+    flst.insert_after(prev, s2);
+}
+```
+## 9.30
+默认构造
