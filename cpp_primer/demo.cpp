@@ -3,10 +3,15 @@
 #include <vector>
 #include <iterator> // 标准库函数begin(), end()
                     // 函数advance()
+                    // 插入迭代器back_inserter
 #include <initializer_list> // 表示可变形参的标准库类型initialzier_list
 #include <cstdlib> // 定义NULL
 #include <cctype> // 处理字符的函数, 比如isalpha(c), toupper(c)等
 #include <cstddef> // 定义size_t: 数组下标类型, 定义ptrdiff_t: 指针相减的类型
+#include <algorithm> // find(), count(), equal()
+                     // fill(), fill_n(), copy(), replace(), replace_copy()
+                     // sort(), unique()
+#include <numeric> // accumulate()
 
 using std::cin;
 using std::cout;
