@@ -21,3 +21,19 @@ vector<int> vec;
 vec.reserve(10);
 fill_n(std::back_inserter(vec), 10, 0);
 ```
+## 10.14
+```cpp
+[] (int i1, int i2) -> int { return i1 + i2 };
+```
+## 10.15
+```cpp
+[i1] (int i2) -> int { return i1 + i2 };
+```
+## 10.20
+```cpp
+count_if(words.cbegin(), words.cend(), [] (const string &word) -> bool { return word.size() > 6; });
+```
+## 10.21
+```cpp
+[&i] () -> bool { if(i) i--; else return --i ? fasle : true; };
+```
