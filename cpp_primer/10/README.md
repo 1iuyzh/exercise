@@ -37,3 +37,7 @@ count_if(words.cbegin(), words.cend(), [] (const string &word) -> bool { return 
 ```cpp
 [&i] () -> bool { if(i) i--; else return --i ? fasle : true; };
 ```
+## 10.24
+```cpp
+bind(check_size, _1, s1.size());
+```

@@ -3,7 +3,7 @@
 #include <vector>
 #include <iterator> // 标准库函数begin(), end()
                     // 函数advance()
-                    // 插入迭代器back_inserter
+                    // 迭代器适配器back_inserter(), front_inserter(), inserter()
 #include <initializer_list> // 表示可变形参的标准库类型initialzier_list
 #include <cstdlib> // 定义NULL
 #include <cctype> // 处理字符的函数, 比如isalpha(c), toupper(c)等
@@ -12,6 +12,7 @@
                      // fill(), fill_n(), copy(), replace(), replace_copy()
                      // sort(), unique()
 #include <numeric> // accumulate()
+#include <functional> // 函数适配器bind(), ref(), cref()
 
 using std::cin;
 using std::cout;
@@ -27,3 +28,5 @@ using std::advance;
 // initializer_list<T>: 参数类型为T的可变形参
 // initializer_list<T> il, il.begin()和il.end()返回的是指针
 // begin()返回数组首元素指针, end()返回数组尾元素下一位置指针
+using std::placeholders::_1; // bind()占位符
+using namespace std::placeholders; // using的另一种方式
