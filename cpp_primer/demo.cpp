@@ -13,6 +13,7 @@
                      // sort(), unique()
 #include <numeric> // accumulate()
 #include <functional> // 函数适配器bind(), ref(), cref()
+#include <utility> // pair类型
 
 using std::cin;
 using std::cout;
