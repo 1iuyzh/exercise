@@ -18,11 +18,7 @@ void Sales_data::combine(const Sales_data &rhs) {
 
 int main () {
     Sales_data total;
-    total.units_sold = 0;
-    total.revenue = 0;
     Sales_data trans;
-    trans.units_sold = 1;
-    trans.revenue = 1.0;
     total.combine(trans);
     cout << total.units_sold << ' ' << total.revenue << endl;
     return 0;
