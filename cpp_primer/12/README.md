@@ -58,3 +58,8 @@ IntP p3(&ix); // 同2
 IntP p4(new int(2048)); // legal
 IntP p5(p2.get()); // 不合法, 两个unique_ptr指向同一块内存
 ```
+## 12.25
+```cpp
+int *pa = new int[10];
+```
+delete [] pa;
