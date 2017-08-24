@@ -12,7 +12,9 @@ public:
         i = rhs.i;
         return *this;
     }
-    ~HasPtr();
+    ~HasPtr() {
+        delete ps;
+    }
 private:
     string *ps;
     int i;
