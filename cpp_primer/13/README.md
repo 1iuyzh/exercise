@@ -21,10 +21,15 @@ Point global;
 Point foo_bar(Point arg) { // 1
     Point local = arg; // 2
     Point *heap = new Point(global); // 3
-    *heap = local; // *heap不是变量
+    *heap = local; // 不是初始化
     Point pa[ 4 ] = { local, *heap }; // 4, 5
     return *heap; // 6
 }
 ```
 ## 13.5
 [code](13_05.h)
+## 13.6
+拷贝赋值运算符是重载运算符的一种, 用来控制对象的赋值  
+拷贝赋值的时候使用  
+通常情况下, 合成拷贝运算符会把右侧运算对象的每个非static成语赋予左侧运算对象的对应成员  
+没有定义拷贝赋值运算符时, 编译器会生成一个合成拷贝赋值运算符
