@@ -33,3 +33,13 @@ Point foo_bar(Point arg) { // 1
 拷贝赋值的时候使用  
 通常情况下, 合成拷贝运算符会把右侧运算对象的每个非static成语赋予左侧运算对象的对应成员  
 没有定义拷贝赋值运算符时, 编译器会生成一个合成拷贝赋值运算符
+## 13.9
+析构函数是类的一个成员函数, 在对象销毁时调用, 用来释放对象使用的资源
+## 13.12
+```cpp
+bool fcn(const Sales_data *trans, Sales_data accum) {
+    Sales_data item1(*trans), item2(accum);
+    return item1.isbn() != item2.isbn(); // 3
+    // 不包括trans
+}
+```
