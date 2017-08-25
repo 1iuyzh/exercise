@@ -4,6 +4,7 @@
 using std::cin; using std::cout; using std::endl;
 using std::string;
 
+// 类指针
 class HasPtr {
 public:
     // 构造函数, 申请动态空间存储引用计数, 并置1
