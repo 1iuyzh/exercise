@@ -8,8 +8,8 @@ class numbered {
 public:
     friend void f(numbered s);
     numbered() : msyn(unique++) { }
-    static int unique;
 private:
+    static int unique;
     int msyn;
 };
 

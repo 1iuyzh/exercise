@@ -9,8 +9,8 @@ public:
     friend void f(numbered s);
     numbered() : msyn(unique++) { }
     numbered(const numbered &n) : msyn(unique++) { }
-    static int unique;
 private:
+    static int unique;
     int msyn;
 };
 
