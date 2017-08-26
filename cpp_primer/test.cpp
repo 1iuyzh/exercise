@@ -1,27 +1,27 @@
-// Exercise 12.10:
-// Explain whether the following call to the process function defined on page
-// 464 is correct. If not, how would you correct the call?
-// correct.
+#include<iostream>
+#include<string>
 
-#include <iostream>
-#include <memory>
+using std::cin; using std::cout; using std::endl;
+using std::string;
 
-void process(std::shared_ptr<int> ptr)
-{
-    std::cout << "inside the process function:" << ptr.use_count() << "\n";
+unsigned hash(const string &k) {
+    unsigned int hashValue = 0;
+    /*
+    const char *keyp = reinterpret_cast<const char *>(&k);
+    for (size_t i = 0; i < sizeof(k); i++) {
+        hashValue = 37 * hashValue + keyp[i];
+    }
+    */
+    for (auto i : k) {
+        hashValue = 37 * hashValue + i;
+    }
+    return hashValue;
 }
 
-int main()
-{
-    std::shared_ptr<int> p(new int(42));
-    // 创建一个临时变量, shared_ptr<int>(p), 在赋值结束后被销毁
-    process(std::shared_ptr<int>(p));
-    // 函数调用结束后, 函数内的ptr被销毁, use_count()返回1
-
-    // codes below shows how the reference count change.
-    std::cout << p.use_count() << "\n";
-    auto q = p;
-    std::cout << p.use_count() << "\n";
-    std::cout << "the int p now points to is:" << *p << "\n";
+int main() {
+    string s("Alpha");
+    cout << sizeof(string) << endl;
+    cout << hash(s) << endl;
+    cout << hash(s) << endl;
     return 0;
 }
