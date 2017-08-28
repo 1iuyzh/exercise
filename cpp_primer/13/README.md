@@ -55,3 +55,12 @@ bool fcn(const Sales_data *trans, Sales_data accum) {
 ## 13.19
 需要拷贝构造函数, 拷贝赋值运算符, 不需要析构函数  
 [code](13_19.cpp)
+## 13.46
+```cpp
+int f();
+vector<int> vi(100);
+int &&r1 = f();     // 返回非引用类型的函数
+int &r2 = vi[0];    // 下标
+int &r3 = r1;       // 不能将右值引用绑定到一个右值引用类型上
+int &&r4 = vi[0] * f();   // 算术
+```
