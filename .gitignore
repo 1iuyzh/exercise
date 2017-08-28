@@ -5,3 +5,4 @@ nand2tetris
 *.exe
 test.cpp
 demo.cpp
+cpp_primer/test.cpp
