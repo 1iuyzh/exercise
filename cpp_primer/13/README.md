@@ -64,3 +64,18 @@ int &r2 = vi[0];    // 下标
 int &r3 = r1;       // 不能将右值引用绑定到一个右值引用类型上
 int &&r4 = vi[0] * f();   // 算术
 ```
+## 13.56
+```cpp
+Foo Foo::sorted() const & {
+    Foo ret(*this);
+    return ret.sorted();
+}
+```
+ret是一个左值, 对ret调用sorted()会无限生成ret, 陷入死循环
+## 13.57
+```cpp
+Foo Foo::sorted() const & {
+    return Foo(*this).sorted();
+}
+```
+正确, Foo(*this)是一个右值, 调用sorted()会重载Foo sorted() &&;版本

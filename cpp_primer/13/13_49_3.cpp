@@ -1,3 +1,4 @@
+// 为Message类添加移动构造函数和移动赋值运算符
 #include<iostream>
 #include<string>
 #include<set>
