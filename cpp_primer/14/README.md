@@ -26,3 +26,10 @@ struct Test {
     }
 };
 ```
+## 14.47
+```cpp
+struct Integral {
+    operator const int();   // 无意义, 会被编译器自动忽略
+    operator int() const;
+}
+```
