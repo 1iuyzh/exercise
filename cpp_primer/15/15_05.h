@@ -18,10 +18,10 @@ private:
     size_t min_qty = 0;     // 适用折扣政策的最低购买量
     double discount = 0.0;  // 折扣额
 };
-// 调用基类的构造函数初始化继承自基类的成员
+
 Bulk_quote::Bulk_quote(const string &book, double p, size_t qty, double disc) : 
     Quote(book, p), min_qty(qty), discount(disc) { }
-// price是基类protected成员
+
 double Bulk_quote::net_price(size_t cnt) const {
     if (cnt >= min_qty)
         return cnt * (1 - discount) * price;

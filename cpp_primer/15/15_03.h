@@ -14,7 +14,7 @@ public:
         bookNo(book), price(sales_price) { }
     string isbn() const { return bookNo; }
     virtual double net_price(size_t n) const { return n * price; }
-    virtual ~Quote() = default;
+    virtual ~Quote() = default; // 虚析构函数
 
 private:
     string bookNo;
