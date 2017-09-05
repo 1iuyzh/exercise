@@ -1,7 +1,7 @@
-#ifndef EX_15_05_H
-#define EX_15_05_H
+#ifndef EX_15_05_BULK_QUOTE_H
+#define EX_15_05_BULK_QUOTE_H
 
-#include"15_03.h"
+#include"15_11_quote.h"
 #include<iostream>
 #include<string>
 
@@ -13,6 +13,7 @@ public:
     Bulk_quote() = default;
     Bulk_quote(const string&, double, size_t, double);
     double net_price(size_t) const override;
+    void debug() const override;
 
 private:
     size_t min_qty = 0;     // 适用折扣政策的最低购买量
@@ -27,6 +28,11 @@ double Bulk_quote::net_price(size_t cnt) const {
         return cnt * (1 - discount) * price;
     else
         return cnt * price;
+}
+void Bulk_quote::debug() const {
+    Quote::debug();
+    cout << "min_qty: " << min_qty << ' ';
+    cout << "discount: " << discount << ' ';
 }
 
 #endif
