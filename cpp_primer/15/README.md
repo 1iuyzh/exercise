@@ -61,3 +61,21 @@ Prot_Derv: legal
 Derived_from_Public: legal  
 Derived_from_Private: illegal  
 Derived_from_Protected: legal
+## 15.23
+```cpp
+class Base {
+public:
+    virtual int fcn();
+};
+class D1 : public Base {
+public:
+    int fcn();
+    virtual void f2();
+};
+class D2 : public D1 {
+public:
+    int fcn(int);
+    int fcn();
+    void f2();
+};
+```
