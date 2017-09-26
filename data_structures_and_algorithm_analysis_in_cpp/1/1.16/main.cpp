@@ -28,11 +28,20 @@ int matrix<Object>::numcols() const {
     return this->numrows() ? array[0].size() : 0;
 }
 
+template <typename Object>
+void matrix<Object>::resize(int rows) {
+    array.resize(rows);
+}
+
 int main() {
     matrix<int> m(5, 5);
     cout << m.numrows() << endl;
     cout << m.numcols() << endl;
     m[1][2] = 1;
     cout << m[1][2] << endl;
+    matrix<int> n;
+    n.resize(3);
+    cout << n.numrows() << endl;
+    cout << n.numcols() << endl;
     return 0;
 }
