@@ -1,6 +1,5 @@
 #include"Collection.h"
 #include<iostream>
-
 using namespace std;
 
 template <typename Object>
