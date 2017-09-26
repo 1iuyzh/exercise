@@ -74,15 +74,15 @@ BlobPtr<T> BlobPtr<T>::operator--(int) {
 
 template <typename T>
 bool operator==(const BlobPtr<T> &lhs, const BlobPtr<T> &rhs) {
-    //if (lhs.wptr.lock() != rhs.wptr.lock())
-        //throw runtime_error("ptrs to different Blobs!");
+    if (lhs.wptr.lock() != rhs.wptr.lock())
+        throw runtime_error("ptrs to different Blobs!");
     return lhs.curr == rhs.curr;
 }
 
 template <typename T>
 bool operator<(const BlobPtr<T> &lhs, const BlobPtr<T> &rhs) {
-    //if (lhs.wptr.lock() != rhs.wptr.lock())
-        //throw runtime_error("ptrs to different Blobs!");
+    if (lhs.wptr.lock() != rhs.wptr.lock())
+        throw runtime_error("ptrs to different Blobs!");
     return lhs.curr < rhs.curr;
 }
 
