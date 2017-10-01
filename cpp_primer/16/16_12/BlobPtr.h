@@ -18,7 +18,6 @@ bool operator<(const BlobPtr<T> &lhs, const BlobPtr<T> &rhs);
 template <typename T> class BlobPtr {
     friend bool operator==<T> (const BlobPtr<T> &, const BlobPtr<T> &);
     friend bool operator< <T> (const BlobPtr<T> &, const BlobPtr<T> &);
-
 public:
     BlobPtr() : curr(0) { }
     BlobPtr(Blob<T> &a, size_t sz = 0) : 
@@ -33,16 +32,13 @@ public:
     BlobPtr operator--(int);
 private:
     std::shared_ptr<std::vector<T>> check(std::size_t, const std::string&) const {
-        if (this->wptr.lock()) {
-            auto ret = this->wptr.lock();
+        if (auto ret = this->wptr.lock())
             return ret;
-        }
     }
     std::weak_ptr<std::vector<T>> wptr;
-    std::size_t curr;   // 数组中的当前位置
+    std::size_t curr;
 };
 
-// 前置
 template <typename T>
 BlobPtr<T>& BlobPtr<T>::operator++() {
     check(curr, "increment past end of Blob");
@@ -57,7 +53,6 @@ BlobPtr<T>& BlobPtr<T>::operator--() {
     return *this;
 }
 
-// 后置
 template <typename T>
 BlobPtr<T> BlobPtr<T>::operator++(int) {
     BlobPtr ret = *this;

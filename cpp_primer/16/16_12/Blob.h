@@ -10,29 +10,24 @@ template <typename> class BlobPtr;
 
 template <typename T> class Blob {
     friend class BlobPtr<T>;
-
 public:
     typedef T value_type;
     typedef typename std::vector<T>::size_type size_type;
-    // 构造函数
     Blob();
     Blob(std::initializer_list<T> il);
-    // Blob中的元素数目
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
-    // 添加和删除元素
     void push_back(const T& t) { data->push_back(t); }
-    // 移动版本
     void push_back(T&& t) { data->push_back(std::move(t)); }
     void pop_back();
-    // 元素访问
     T& back();
+    T& front();
     T& operator[](size_type i);
     const T& back() const;
+    const T& front() const;
     const T& operator[](size_type i) const;
 private:
     std::shared_ptr<std::vector<T>> data;
-    // 若data[i]无效, 则抛出msg
     void check(size_type i, const std::string &msg) const;
 };
 
@@ -59,6 +54,18 @@ template <typename T>
 const T& Blob<T>::back() const {
     check(0, "back on empty Blob");
     return data->back();
+}
+
+template <typename T>
+T& Blob<T>::front() {
+    check(0, "front on empty Blob");
+    return data->front();
+}
+
+template <typename T>
+const T& Blob<T>::front() const {
+    check(0, "front on empty Blob");
+    return data->front();
 }
 
 template <typename T>

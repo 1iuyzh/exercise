@@ -7,7 +7,7 @@ using namespace std;
 
 template <typename Object>
 class Collection {
-    typedef typename vector<Object>::size_type size_type;
+    typedef vector<Object>::size_type size_type;
 
 public:
     Collection() = default;
