@@ -1,3 +1,6 @@
+#ifndef BINARYSEARCHTREE_H
+#define BINARYSEARCHTREE_H
+
 #include<iostream>
 using namespace std;
 
@@ -37,8 +40,15 @@ private:
     
     BinaryNode *root;
 
+    void insert(const Comparable &x, BinaryNode * &t);
+    void insert(Comparable &&x, BinaryNode * &t);
+    void remove(const Comparable &x, BinaryNode * &t);
     BinaryNode *findMax(BinaryNode *t) const;
     BinaryNode *findMin(BinaryNode *t) const;
     bool contains(const Comparable &x, BinaryNode *t) const;
-    
+    void makeEmpty(BinaryNode * &t);
+    void printTree(BinaryNode *t, ostream &out) const;
+    BinaryNode *clone(BinaryNode *t) const;
 };
+
+#endif
