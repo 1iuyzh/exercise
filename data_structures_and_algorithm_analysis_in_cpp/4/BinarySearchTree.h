@@ -32,7 +32,7 @@ private:
         BinaryNode *left;
         BinaryNode *right;
 
-        BinaryNode(const Comparable &theElement, BinaryNode *lt, BinaryNode &rt)
+        BinaryNode(const Comparable &theElement, BinaryNode *lt, BinaryNode *rt)
             : element(theElement), left(lt), right(rt) { }
         BinaryNode(Comparable &&theElement, BinaryNode *lt, BinaryNode *rt)
             : element(std::move(theElement)), left(lt), right(rt) { }
@@ -47,7 +47,7 @@ private:
     BinaryNode *findMin(BinaryNode *t) const;
     bool contains(const Comparable &x, BinaryNode *t) const;
     void makeEmpty(BinaryNode * &t);
-    void printTree(BinaryNode *t, ostream &out) const;
+    void printTree(ostream &out, BinaryNode *t, int depth = 0) const;
     BinaryNode *clone(BinaryNode *t) const;
 };
 
@@ -97,7 +97,7 @@ bool BinarySearchTree<Comparable>::isEmpty() const {
 
 template <typename Comparable>
 void BinarySearchTree<Comparable>::printTree(ostream &out) const {
-    printTree(root, out);
+    printTree(out, root, 0);
 }
 
 template <typename Comparable>
@@ -215,16 +215,20 @@ void BinarySearchTree<Comparable>::makeEmpty(BinaryNode * &t) {
 }
 
 template <typename Comparable>
-void BinarySearchTree<Comparable>::printTree(BinaryNode *t, ostream &out) const {
+void BinarySearchTree<Comparable>::printTree(ostream &out, BinaryNode *t, int depth) const {
     if (t == nullptr)
         return;
-    else if (t->left == nullptr && t->right == nullptr)
+    else if (t->left == nullptr && t->right == nullptr) {
+        for (int i = 0; i < depth; i++)
+            out << ' ';
         out << t->element << endl;
+    }
     else {
+        for (int i = 0; i < depth; i++)
+            out << ' ';
         out << t->element << endl;
-        out << '\t';
-        printTree(t->left);
-        printTree(t->right);
+        printTree(out, t->left, depth + 1);
+        printTree(out, t->right, depth + 1);
     }        
 }
 
