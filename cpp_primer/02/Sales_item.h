@@ -5,5 +5,5 @@ struct Sales_item {
     std::string bookNumber;
     unsigned units_sold = 0;
     double revenue = 0.0;
-}
+};
 #endif
