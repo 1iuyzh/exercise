@@ -5,13 +5,13 @@
 using namespace std;
 
 int longestPalindrome(const string &s) {
-    map<char, int> m;
+    int res = 1, list[256] = {0};
     for (auto &c : s)
-        m[c]++;
-    int res = 0;
-    for (auto i : m)
-        res += i.second%2 ? (res%2? i.second-1 : i.second) : i.second;
-    return res;
+        list[c]++;
+    for (auto &i : list)
+        res += i%2 ? i-1 : i;
+        //res += i & ~1;
+    return min<int>(res, s.size());
 }
 
 int main() {
