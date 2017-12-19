@@ -22,7 +22,7 @@ private:
     vector<list<HashedObj>> theLists;   // 链表数组
     int currentSize;
 
-    //void rehash();
+    void rehash();
     size_t myhash(const HashedObj &x) const;
 };
 
@@ -50,6 +50,7 @@ bool HashTable<HashedObj>::contains(const HashedObj &x) const {
 
 template <typename HashedObj>
 void HashTable<HashedObj>::makeEmpty() {
+    currentSize = 0;
     for (auto &thisList : theLists)
         thisList.clear();
 }
@@ -73,14 +74,25 @@ bool HashTable<HashedObj>::insert(const HashedObj &x) {
     if (find(whichList.begin(), whichList.end(), x) != whichList.end())
         return false;
     whichList.push_back(x);
-    currentSize++;  // del
 
-    /*
     if (++currentSize > theLists.size())
         rehash();
-    */
     
     return true;
+}
+
+template <typename HashedObj>
+void HashTable<HashedObj>::rehash() {
+    vector<list<HashedObj>> oldLists = theLists;
+
+    theLists.resize(2 * theLists.size());
+    for (auto &thisList : theLists)
+        thisList.clear();
+    
+    currentSize = 0;
+    for (auto &thisList : oldLists)
+        for (auto &x : thisList)
+            insert(std::move(x));
 }
 
 template <typename HashedObj>
