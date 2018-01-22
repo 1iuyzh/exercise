@@ -17,6 +17,7 @@ int func(int m) {
         SetLastError(ERROR_NOT_SUPPORTED);
     else
         return true;
+    //返回false,INVALID_HANDLE_VALUE或NULL
     return false;
 }
 
@@ -39,7 +40,7 @@ void PrintErrorDescription() {
 
 int main() {
     if (!func(0)) {
-        //cout << GetLastError() << endl;
+        cout << GetLastError() << endl;
         PrintErrorDescription();
     }
     else
