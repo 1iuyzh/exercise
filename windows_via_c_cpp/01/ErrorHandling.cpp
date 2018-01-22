@@ -1,3 +1,12 @@
+/*
+ * 具体包括以下函数的用法:
+ * 
+ * SetLastError()
+ * GetLastError()
+ * FormatMessage()
+ * LocalFree()
+ */
+
 #include<windows.h>
 #include<winerror.h>
 #include<iostream>
