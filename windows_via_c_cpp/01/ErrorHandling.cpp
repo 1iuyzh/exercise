@@ -30,7 +30,13 @@ void PrintErrorDescription() {
         GetLastError(),
         MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
         //(LPTSTR) &lpMsgBuf,
-        //这里应该是老版本遗留的一个问题,形参类型虽然为LPTSTR,但是当FORMAT_MESSAGE_ALLOCATE_BUFFER置位时,LocalAlloc()分配的缓冲区地址需要放在指针变量lpMsgBuf内,所以实参传入指针的指针
+        /*
+         *这里应该是老版本遗留的一个问题,形参类型虽然为LPTSTR,
+         *但是当FORMAT_MESSAGE_ALLOCATE_BUFFER置位时,
+         *LocalAlloc()分配的缓冲区地址需要放在指针变量lpMsgBuf内,
+         *所以实参传入的是指针的指针
+         *
+         */
         reinterpret_cast<LPTSTR> (&lpMsgBuf),
         0,
         NULL
