@@ -139,9 +139,52 @@ HWND WINAPI CreateWindowExA(
 #### 过时的Windows函数
 Windows　API中的某些函数, 比如WinExec和OpenFile等, 不接受Unicode字符串, 应该避免使用  
 对应的, 建议使用CreateProcess和CreateFile函数来代替, 从系统内部讲, 老的函数完全可以调用新的函数
-#### Windows字符串函数
-Windows提供了一组范围很广的字符串操作函数, 作为操作系统的一个组成部分  
+#### "ShlWApi.h"
+Windows提供了一组范围很广的字符串操作函数: StrCat, StrChr, StrCmp, StrCpy等, 作为操作系统的一个组成部分  
 尽管这些函数与C++标准库里的字符串函数(如strcpy和wcscpy)很相似, 但是仍建议使用操作系统函数  
-* "ShlWApi.h"  
-StrCat, StrChr, StrCmp, StrCpy等  
 如前所述, 这些函数既有ANSI版本, 也有Unicode版本, 例如StrCatA和StrCatW
+#### 编写符合ANSI和Unicode的应用程序
+例如函数通常希望你在字符中传递一个缓存的大小, 而不是字节, 这意味着你不应该传递sizeof(szBuffer), 而应该传递(sizeof(szBuffer)/sizeof(TCHAR)). 另外, 如果需要为字符串分配一个内存块, 并且拥有该字符串中的字符数目, 那么需要按字节来分配内存, 应该调用malloc(nCharacters*sizeof(TCHAR))
+#### Windows字符串函数
+* 一组对Unicode字符串进行操作的函数
+```cpp
+lstrcat     //将一个字符串置于另一个字符串的结尾处
+lstrcmp     //对两个字符串进行区分大小写的比较
+lstrcmpi    //对两个字符串进行不区分大小写的比较
+lstrcpy     //将一个字符串拷贝到内存中的另一个位置
+lstrlen     //返回字符串的长度(按字符数来计量)
+```
+这些函数根据是否定义UNICODE调用Unicode版本或ANSI版本  
+例如, 如果定义了UNICODE, lstrcat扩展为lstrcatW, 如果没有定义UNICODE, lstrcat扩展为lstrcatA
+* CompareString函数  
+```cpp
+int CompareString(
+    LCID lcid,
+    DWORD fdwStyle,
+    PCWSTR pString1,
+    int cch1,
+    PCWSTR pString2,
+    int cch2
+);
+```
+lcid用于设定语言ID(LCID), 用来标识一种特定的语言, 通过调用GetThreadString()得到当前线程的语言设置
+* CharLower和CharUpper函数
+```cpp
+PTSTR CharLower(PTSTR pszString);
+PTSTR CharUpper(PTSTR pszString);
+```
+既可以转换单个字符, 也可以转换以0结尾的字符串
+* IsCharAlpha, IsCharAlphaNumeric, IsCharLower, IsCharUpper  
+```cpp
+BOOL IsCharAlpha(TCHAR ch);
+BOOL IsCharAlphaNumeric(TCHAR ch);
+BOOL IsCharLower(TCHAR ch);
+BOOL IsCharUpper(TCHAR ch);
+```
+* printf函数  
+如果定义了_UNICODE, printf函数便希望所有字符和字符串参数代表Unicode字符和字符串  
+如果没有定义_UNICODE, printf函数便希望传递的字符和字符串是ANSI字符和字符串
+```cpp
+sprintf()
+swprintf()
+```
