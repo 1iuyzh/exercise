@@ -1,7 +1,19 @@
-思考:  
-1. Windows API是怎么用C++实现的
-2. 如何用C++与系统函数进行交互
-## c++ 11 标准
+## _UNICODE/UNICODE
+_UNICODE用于C/C++标准库  
+UNICODE用于Windows函数  
+编写符合ANSI和Unicode的程序:  
+1. 数据类型  
+|_UNICODE|.h file|
+|:-|:-|
+|TCHAR|tchar.h|
+
+_UNICODE: TCHAR  
+UNICODE: PTSTR, PCTSTR
+2. 常量  
+_UNICODE: _TEXT(), _T()  
+3. 方法  
+_UNICODE: _tcscpy()
+## c++ 标准库
 #### 字符类型
 * wchar_t  
 宽字符类型
@@ -18,18 +30,12 @@ u"我是16位Unicode字符"
 ```cpp
 U"我是32位Unicode字符"
 ```
-#### C++字符串方法ANSI/Unicode版本
+#### ANSI/Unicode版字符串方法
 * ANSI版本  
 "string.h"中定义的strcpy, strchr, strcat, strlen等函数, 不能正确处理Unicode字符串
 * Unicode版本  
 "string.h"中定义的wcscpy, wcschr, wcscat, wcslen等函数  
 注意, 所有的Unicode函数均以wcs开头, wcs是宽字符串的英文缩写
-## Windows系统函数
-Windows2000以后, 调用Windows函数并给它传递一个ANSI字符串, 系统会先把字符串转换成Unicode, 然后再传递给操作系统  
-如果希望函数返回ANSI字符串, 系统会先把Unicode字符串转换成ANSI字符串, 然后将结果返回给程序
-## Windows头文件
-#### _UNICODE/UNICODE
-_UNICODE和UNICODE最好同时定义
 #### "tchar.h"
 "Tchar.h"头文件包含了一组宏, 帮助创建ANSI/Unicode通用源代码文件
 * _tcscpy等宏  
@@ -50,7 +56,7 @@ typedef char TCHAR;
 #endif
 ```
 * _TEXT()  
-等价于_T()
+相当于_T()
 ```cpp
 #ifdef _UNICODE
 #define _TEXT(x) L ## x
@@ -58,8 +64,11 @@ typedef char TCHAR;
 #define _TEXT(x) x
 #endif
 ```
+## Windows函数
+Windows2000以后, 调用Windows函数并给它传递一个ANSI字符串, 系统会先把字符串转换成Unicode, 然后再传递给操作系统  
+如果希望函数返回ANSI字符串, 系统会先把Unicode字符串转换成ANSI字符串, 然后将结果返回给程序
 #### “winnt.h"
-Windows头文件定义的Unicode数据类型
+Windows头文件也定义了Unicode数据类型
 * WCHAR  
 Unicode字符
 ```cpp
