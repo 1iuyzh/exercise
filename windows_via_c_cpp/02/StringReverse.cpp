@@ -1,5 +1,5 @@
-//#define _UNICODE
-//#define UNICODE
+#define _UNICODE
+#define UNICODE
 
 #include"StringReverse.h"
 #include<iostream>
