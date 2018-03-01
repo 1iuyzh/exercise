@@ -8,18 +8,26 @@ using namespace std;
 template <typename Comparable>
 class BinaryHeap {
 public:
-    explicit BinaryHeap(int capacity = 100);
+    BinaryHeap();
+    // 拷贝初始化
+    BinaryHeap(const BinaryHeap &rhs);
+    BinaryHeap(BinaryHeap &&rhs);
+    // 直接初始化
+    explicit BinaryHeap(int capacity);
     explicit BinaryHeap(const vector<Comparable> &items);
+
+    ~BinaryHeap();
+
+    BinaryHeap & operator=(const BinaryHeap &rhs);
+    BinaryHeap & operator=(BinaryHeap &&rhs);
 
     bool isEmpty() const;
     //const Comparable &findMax() const;
-
     void insert(const Comparable &x);
     void insert(Comparable &&x);
     void deleteMin();
     void deleteMin(Comparable &minItem);
     void makeEmpty();
-
     void printHeap() const;
 
 private:
@@ -29,6 +37,38 @@ private:
     void buildHeap();
     void percolateDown(int hole);
 };
+
+template <typename Comparable>
+BinaryHeap<Comparable>::BinaryHeap() : currentSize(0), array(10) {}
+
+template <typename Comparable>
+BinaryHeap<Comparable>::~BinaryHeap() {
+    makeEmpty();
+}
+
+template <typename Comparable>
+BinaryHeap<Comparable>::BinaryHeap(const BinaryHeap &rhs) {
+    currentSize = rhs.currentSize;
+    array = rhs.array;
+}
+
+template <typename Comparable>
+BinaryHeap<Comparable>::BinaryHeap(BinaryHeap &&rhs) {
+    currentSize = rhs.currentSize;
+    array = std::move(rhs.array);
+}
+
+template <typename Comparable>
+BinaryHeap<Comparable>& BinaryHeap<Comparable>::operator=(const BinaryHeap &rhs) {
+    currentSize = rhs.currentSize;
+    array = rhs.array;
+}
+
+template <typename Comparable>
+BinaryHeap<Comparable>& BinaryHeap<Comparable>::operator=(BinaryHeap &&rhs) {
+    currentSize = rhs.currentSize;
+    array = std::move(rhs.array);
+}
 
 template <typename Comparable>
 BinaryHeap<Comparable>::BinaryHeap(int capacity) : array(capacity), currentSize(0) { }
@@ -49,6 +89,7 @@ bool BinaryHeap<Comparable>::isEmpty() const {
 template <typename Comparable>
 void BinaryHeap<Comparable>::makeEmpty() {
     currentSize = 0;
+    // vector array需要手动析构么?
 }
 
 template <typename Comparable>
@@ -57,7 +98,7 @@ void BinaryHeap<Comparable>::insert(const Comparable &x) {
         array.resize(array.size() * 2);
     //percolate up
     int hole = ++currentSize;
-    Comparable copy = x;
+    Comparable copy = x; // 拷贝初始化
 
     array[0] = std::move(copy);
     for (; x < array[hole/2]; hole /= 2)

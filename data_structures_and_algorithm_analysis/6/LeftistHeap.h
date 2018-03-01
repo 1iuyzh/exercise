@@ -17,10 +17,10 @@ public:
     LeftistHeap & operator=(LeftistHeap &&rhs);
 
     bool isEmpty() const;
-    void makeEmpty();
     void insert(const Comparable &x);
     void insert(Comparable &&x);
     void deleteMin();
+    void makeEmpty();
     void merge(LeftistHeap &rhs);
     void printHeap(ostream &out = cout) const;
 
@@ -42,9 +42,9 @@ private:
     LeftistNode *merge(LeftistNode *h1, LeftistNode *h2);
     LeftistNode *merge1(LeftistNode *h1, LeftistNode *h2);
 
-    void swapChildren(LeftistNode *t);
+    LeftistNode *clone(LeftistNode *t) const;;
     void makeEmpty(LeftistNode * &t);
-    LeftistNode *clone(LeftistNode *t) const;
+    void swapChildren(LeftistNode *t)
     void printHeap(ostream &out, LeftistNode *t, int depth = 0) const;
 };
 
@@ -81,8 +81,9 @@ LeftistHeap<Comparable>::LeftistHeap(const LeftistHeap &rhs) {
 template <typename Comparable>
 LeftistHeap<Comparable>::LeftistHeap(LeftistHeap &&rhs) {
     root = rhs.root;
-    rhs.root = nullptr; // 或者用std::move()?
-    // 测试, 是否可以在内部修改同类对象的成员
+    rhs.root = nullptr;
+    // std::move()仅仅是一个声明, 用以说明不会调用该对象的值
+    // 可以在类内修改同类对象成员的值
 }
 
 template <typename Comparable>
@@ -170,19 +171,18 @@ void LeftistHeap<Comparable>::printHeap(ostream &out, LeftistNode *t, int depth)
     }
 }
 
-
 template <typename Comparable>
 bool LeftistHeap<Comparable>::isEmpty() const {
-    return root == nullptr? true : false;
+    return root == nullptr ? true : false;
 }
 
 template <typename Comparable>
 void LeftistHeap<Comparable>::deleteMin() {
     if (isEmpty())
         return;
-    auto tmp = root;
+    LeftistNode *oldRoot = root;
     root = merge(root->left, root->right);
-    delete tmp;
+    delete oldRoot;
 }
 
 #endif
