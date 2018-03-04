@@ -77,7 +77,6 @@ Vector<Object>& Vector<Object>::operator=(Vector &&rhs) {
     std::swap(objects, rhs.objects);
     //std::swap(*this, rhs);
     //std::swap(a, b)
-    //c=std::move(a); a=std::move(b); b=std::move(c) 
     return *this;
 }
 

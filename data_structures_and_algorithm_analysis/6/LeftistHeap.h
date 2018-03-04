@@ -82,7 +82,7 @@ template <typename Comparable>
 LeftistHeap<Comparable>::LeftistHeap(LeftistHeap &&rhs) {
     root = rhs.root;
     rhs.root = nullptr;
-    // std::move()仅仅是一个声明, 用以说明不会调用该对象的值
+    // std::move()仅仅表示一个声明, 之后的程序不会获取该对象的值
     // 可以在类内修改同类对象成员的值
 }
 

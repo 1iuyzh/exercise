@@ -6,7 +6,6 @@ using namespace std;
 
 template <typename Object>
 class List {
-
 private:
     struct Node;
 
