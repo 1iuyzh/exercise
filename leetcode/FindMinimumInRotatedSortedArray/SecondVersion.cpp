@@ -7,10 +7,10 @@ You may assume no duplicate exists in the array.
 #include<vector>
 using std::vector;
 
+// time:  O(logN)
+// space: O(1)
 class Solution {
     public:
-    // time: O(logN)
-    // space: O(1)
     int findMin(vector<int> &nums) {
         int left = 0, right = nums.size() - 1;
         while (left < right && nums[right] < nums[left]) {

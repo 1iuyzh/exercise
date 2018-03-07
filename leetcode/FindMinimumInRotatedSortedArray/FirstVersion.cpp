@@ -7,6 +7,8 @@ You may assume no duplicate exists in the array.
 #include<vector>
 using std::vector;
 
+// time:  O(N)
+// space: O(1)
 class Solution {
     public:
     int findMin(vector<int> &nums) {

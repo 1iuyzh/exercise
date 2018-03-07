@@ -18,10 +18,10 @@ So the maximum value of F(0), F(1), F(2), F(3) is F(3) = 26.
 #include<vector>
 using std::vector;
 
+// time:  O(N2)
+// space: O(1)
 class Solution {
     public:
-    // time: O(N2)
-    // space: O(1)
     int maxRotateFunction(vector<int> &A) {
         if (A.empty())
             return 0;
