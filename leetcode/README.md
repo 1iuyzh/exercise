@@ -1,7 +1,10 @@
 Problem|key
 :-|:-
+CountingBits | 
 FindMinimumInRotatedSortedArray | binary search
-LongestPalindrome | map
+HammingDistance | z &= z - 1
+LongestPalindrome | 
 MaximumSubarray | dynamic programming, divide and conquer
-ReverseString | swap
+ReverseString | 
 RotateFunction | recursion
+TwoSum | m.find() != m.end()
