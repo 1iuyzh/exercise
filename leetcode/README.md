@@ -1,6 +1,8 @@
 Problem|key
 :-|:-
+BattleshipsInABoard | 
 CountingBits | 
+FindAllNumbersDisappearedInAnArray | space
 FindMinimumInRotatedSortedArray | binary search
 HammingDistance | z &= z - 1
 LongestPalindrome | 
