@@ -1,5 +1,5 @@
-#ifndef __DISJ_SETS__
-#define __DISJ_SETS__
+#ifndef __DISJ_SETS_H__
+#define __DISJ_SETS_H__
 
 #include<vector>
 using std::vector;
