@@ -5,28 +5,22 @@
 #include <unistd.h>
 
 int main() {
-    int fd1, fd2, fd3;
+    int fd0, fd1, fd2, fd3;
     char pt[20];
     ssize_t n;
+    fd0 = open("baz.txt", O_WRONLY, 0);
     fd1 = open("baz.txt", O_WRONLY | O_APPEND, 0);
     fd2 = open("baz.txt", O_WRONLY | O_TRUNC, 0);
     fd3 = open("baz.txt", O_RDONLY, 0);
-    //5
-    n = write(fd1, "aaa", 5);
+    write(fd0, "0", 1);
+    write(fd0, "0", 1);
+    write(fd2, "2", 1);
+    write(fd2, "2", 1);
+    write(fd0, "0", 1); //220
+    n = write(fd2, "2", 2); //222\0
     printf("%ld\n", n);
-    //2
-    n = write(fd1, "bbb", 2);
-    printf("%ld\n", n);
-    //2
-    n = write(fd2, "ccc", 2);
-    printf("%ld\n", n);
-    //cca\0\0bb
+    write(fd1, "1", 1); //222\01
     n = read(fd3, pt, 6);
-    printf("%s\n", pt);
-    printf("%c\n", pt[5]);
-    printf("%ld\n", n);
-    //1
-    n = read(fd3, pt, 2);
-    printf("%ld\n", n);
+    printf("%ld %c\n", n, pt[4]); //5 1
     return (0);
 }
