@@ -9,6 +9,6 @@ int main() {
     read(fd2, &c, 1);
     dup2(fd2, fd1);
     read(fd1, &c, 1);
-    printf("c = %c\n", c);
+    printf("c = %c\n", c); // c = o
     exit(0);
 }
