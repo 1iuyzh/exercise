@@ -49,15 +49,15 @@ static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n) {
     while (rp->rio_cnt <= 0) {
         rp->rio_cnt = read(rp->rio_fd, rp->rio_buf, 
             sizeof(rp->rio_buf));
-        if (rp->rio_cnt < 0)
+        if (rp->rio_cnt < 0) {
             if (errno != EINTR)
                 return -1;
+        }
         else if (rp->rio_cnt == 0)
             return 0;
         else
-            rp->rio_bufptr = rp->rio_buf;    
+            rp->rio_bufptr = rp->rio_buf;
     }
-    
     cnt = n;
     if (rp->rio_cnt < n)
         cnt = rp->rio_cnt;
