@@ -12,9 +12,9 @@ int main() {
     fd1 = open("baz.txt", O_WRONLY | O_APPEND, 0);
     fd2 = open("baz.txt", O_WRONLY | O_TRUNC, 0);
     fd3 = open("baz.txt", O_RDONLY, 0);
-    write(fd0, "0", 1);
+    write(fd0, "00", 2);
     write(fd2, "2", 1);
-    write(fd0, "000", 3);
+    write(fd0, "00", 2);
     write(fd2, "2", 2); //22\00
     write(fd1, "1", 1); //22\001
     n = read(fd3, pt, 10);
