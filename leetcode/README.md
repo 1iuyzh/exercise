@@ -3,7 +3,7 @@
 ## Array
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
-|419|[Battleships in a Board](battleships_in_a_board.cpp)|O(m * n)|O(1)|Medium||
+|419|[Battleships in a Board](battleships_in_a_board.cpp)|O(m*n)|O(1)|Medium||
 |448|[Find All Numbers Disappeared in an Array](find_all_numbers_disappeared_in_an_array.cpp)|O(n)|O(1)|Easy||
 |396|[Rotate Function](rotate_function.cpp)|O(n)|O(1)|Easy||
 
@@ -32,6 +32,7 @@
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
 |53|[Maximum Subarray](maximum_subarray.cpp)|O(n)|O(1)|Medium||
+|115|[Distinct Subsequences](distinct_subsequences.cpp)|O(n^2)|O(n)|Hard||
 
 ## Two Pointers
 |#|Title|Time|Space|Difficulty|Note|
