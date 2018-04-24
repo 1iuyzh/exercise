@@ -7,13 +7,12 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 */
+
 #include<vector>
 #include<map>
 using std::vector;
 using std::map;
 
-// time:  O(N)
-// space: O(N)
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {

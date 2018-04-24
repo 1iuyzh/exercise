@@ -6,23 +6,23 @@ the contiguous subarray [4,-1,2,1] has the largest sum = 6.
 More practice:
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 */
+
 #include<vector>
 #include<algorithm>
 using std::vector;
 using std::max;
 
-// time:  O(N)
-// space: O(1)
 class Solution {
 public:
     int maxSubArray(const vector<int>& nums) {
-        if (nums.empty()) return 0;
-        int val = nums[0];
-        int tmp = 0;
+        if (nums.empty())
+            return 0;
+        int tmp = nums[0];
+        int val = 0;
         for (int i = 0; i < nums.size(); ++i) {
-            if (tmp < 0) tmp = nums[i];
-            else tmp += nums[i];
-            val = max(val, tmp);
+            if (val < 0) val = nums[i];
+            else val += nums[i];
+            tmp = max(tmp, val);
         }
         return val;
     }

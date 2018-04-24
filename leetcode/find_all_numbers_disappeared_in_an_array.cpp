@@ -9,10 +9,9 @@ Input:
 Output:
 [5,6]
 */
-#include<iostream>
+
 #include<vector>
-using std::cout;
-using std::endl;
+#include<cmath>
 using std::vector;
 
 class Solution {
@@ -23,21 +22,13 @@ public:
                 nums[abs(nums[i]) - 1] *= -1;
         }
 
-        vector<int> ret;
+        vector<int> res;
         for (int i = 0; i < nums.size(); ++i) {
             if (nums[i] > 0)
-                ret.push_back(i + 1);
+                res.push_back(i + 1);
             else
                 nums[i] *= -1;
         }
-        return ret;
+        return res;
     }
 };
-
-int main() {
-    vector<int> v{ 4, 3, 2, 7, 8, 2, 3, 1 };
-    for (auto &i : Solution().findDisappearedNumbers(v))
-        cout << i << ' ';
-    cout << endl;
-    return 0;
-}

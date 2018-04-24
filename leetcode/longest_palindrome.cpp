@@ -11,6 +11,7 @@ Output:
 Explanation:
 One longest palindrome that can be built is "dccaccd", whose length is 7.
 */
+
 #include<string>
 #include<map>
 #include<algorithm>
@@ -18,8 +19,6 @@ using std::string;
 using std::map;
 using std::min;
 
-// time:  O(N)
-// space: O(1)
 class Solution {
     public:
     int longestPalindrome(const string &s) {

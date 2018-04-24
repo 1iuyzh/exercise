@@ -8,24 +8,27 @@ Follow up:
 It is very easy to come up with a solution with run time O(n*sizeof(integer)). But can you do it in linear time O(n) /possibly in a single pass?
 Space complexity should be O(n).
 Can you do it like a boss? Do it without using any builtin function like __builtin_popcount in c++ or in any other language.
-
-Credits:
-Special thanks to @ syedee for adding this problem and creating all test cases.
 */
+
 #include<vector>
 using std::vector;
 
-// time:  O(N*sizeof(integer))
-// space: O(N)
 class Solution {
 public:
     vector<int> countBits(int num) {
         vector<int> v(num + 1);
-        for (int i = 0; i <= num; ++i) {
-            int j = 0;
-            for (; i; i &= i - 1, ++j);
-            v[i] = j;
-        }
+        for (int i = 0; i <= num; ++i)
+            v[i] = i % 2 == 0 ? v[i/2] : v[i/2] + 1;
         return v;
     }
 };
+
+class Solution2 {
+public:
+    vector<int> countBits(int num) {
+        vector<int> v(num + 1);
+        for (int i = 1; i <= num; ++i)
+            v[i] = (i & 1) + v[i >> 1];
+        return v;
+    }
+}

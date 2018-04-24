@@ -15,23 +15,22 @@ F(2) = (0 * 2) + (1 * 6) + (2 * 4) + (3 * 3) = 0 + 6 + 8 + 9 = 23
 F(3) = (0 * 3) + (1 * 2) + (2 * 6) + (3 * 4) = 0 + 2 + 12 + 12 = 26
 So the maximum value of F(0), F(1), F(2), F(3) is F(3) = 26.
 */
+
 #include<vector>
-#include<algorithm>
 #include<numeric>
+#include<algorithm>
 using std::vector;
 using std::max;
 
-// time:  O(N)
-// space: O(1)
 class Solution {
     public:
     int maxRotateFunction(vector<int> &A) {
-        int sum = accumulate(A.begin(), A.end(), 0);
         int val = 0;
         for (int i = 0; i < A.size(); ++i)
             val += i * A[i];
-        
         int maxVal = val;
+
+        int sum = accumulate(A.begin(), A.end(), 0);
         for (int k = 1; k < A.size(); ++k) {
             val -= sum - A.size() * A[k-1];
             maxVal = max(maxVal, val);
