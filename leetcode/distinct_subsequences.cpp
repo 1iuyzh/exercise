@@ -26,10 +26,10 @@ using std::vector;
 class Solution {
 public:
     int numDistinct(string s, string t) {
-        vector<int> ways(t.size()+1);
+        vector<int> ways(t.size() + 1);
         ways[0] = 1;
         for (int i = 0; i < s.size(); ++i) {
-            for (int j = 0; j < t.size(); ++j) {
+            for (int j = t.size()-1; j >= 0; --j) {
                 if (s[i] == t[j])
                     ways[j+1] += ways[j];
             }
