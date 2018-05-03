@@ -33,6 +33,7 @@
 |:-|:-|:-|:-|:-|:-|
 |53|[Maximum Subarray](maximum_subarray.cpp)|O(n)|O(1)|Medium||
 |115|[Distinct Subsequences](distinct_subsequences.cpp)|O(n^2)|O(n)|Hard||
+|312|[Burst Balloons](burst_balloons.cpp)|O(n^3)|O(n^2)|Hard||
 
 ## Two Pointers
 |#|Title|Time|Space|Difficulty|Note|
