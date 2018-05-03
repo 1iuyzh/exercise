@@ -38,3 +38,4 @@
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
 |344|[Reverse String](reverse_string.cpp)|O(n)|O(1)|Easy||
+|82|[Remove Duplicates from Sorted List II](remove_duplicates_from_sorted_list_2.cpp)|O(n)|O(1)|Medium||
