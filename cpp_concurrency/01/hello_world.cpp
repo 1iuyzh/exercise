@@ -1,17 +1,12 @@
 #include<iostream>
 #include<thread>
 
-using std::cin;
-using std::cout;
-using std::endl;
-using std::thread;
-
 void hello() {
-    cout << "Hello Concurrent World" << endl;
+    std::cout << "Hello Concurrent World" << std::endl;
 }
 
 int main() {
-    thread t(hello);
+    std::thread t(hello);
     t.join();
     return 0;
 }
