@@ -16,19 +16,19 @@ public:
 struct func {
     int &i;
     func(int &i_) : i(i_) {}
-    void operator() () {
+    void operator()() {
         for (unsigned j = 0; j < 10; ++j)
             std::cout << i;
     }
 };
 
 void f() {
-    int some_local_state = 1;
+    int some_local_state = 0;
     func my_func(some_local_state);
     std::thread t(my_func);
     thread_guard g(t);
     for (unsigned j = 0; j < 10; ++j)
-        std::cout << 0;
+        std::cout << 1;
 }
 
 int main() {
