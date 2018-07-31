@@ -8,6 +8,7 @@
 ## Array
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
+|26|[Remove Duplicates from Sorted Array](remove_duplicates_from_sorted_array.cpp)|O(N)|O(1)|Easy||
 |419|[Battleships in a Board](battleships_in_a_board.cpp)|O(m*n)|O(1)|Medium||
 |448|[Find All Numbers Disappeared in an Array](find_all_numbers_disappeared_in_an_array.cpp)|O(n)|O(1)|Easy||
 |396|[Rotate Function](rotate_function.cpp)|O(n)|O(1)|Easy||
