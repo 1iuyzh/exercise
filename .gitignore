@@ -3,6 +3,7 @@ nand2tetris
 .vs
 *.o
 *.exe
+*.out
 test.cpp
 demo.cpp
 cpp_primer/test.cpp
