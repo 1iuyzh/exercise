@@ -17,7 +17,6 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
-
 class Solution {
 public:
     ListNode *deleteDuplicates(ListNode *head) {
