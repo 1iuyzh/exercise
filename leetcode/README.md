@@ -39,11 +39,19 @@
 |:-|:-|:-|:-|:-|:-|
 |1|[Two Sum](two_sum.cpp)|O(n)|O(n)|Easy||
 |409|[Longest Palindrome](longest_palindrome.cpp)|O(n)|O(1)|Easy||
+|467|[Unique Substrings in Wraparound String](unique_substrings_in_wraparound_string.cpp)|O(n)|1|Medium|DP|
 
 ## Tree
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
-|820|[Short Encoding of Words](short_encoding_of_words.cpp)|||Medium|tire|
+|94|[Binary Tree Inorder Traversal](binary_tree_inorder_traversal.cpp)|O(n)|O(1)|Medium|stack|
+|98|[Validate Binary Search Tree](validate_binary_search_tree.cpp)|O(n)|O(h)|Medium|recursion|
+|144|[Binary Tree Preorder Traversal](binary_tree_preorder_traversal.cpp)|O(n)|O(1)|Easy|stack|
+|173|[Binary Search Tree Iterator](binary_search_tree_iterator.cpp)|O(1)|O(h)|Medium|stack|
+|230|[Kth Smallest Element in a BST](kth_smallest_element_in_a_bst.cpp)|O(max(h,k))|O(min(h,k))|Medium|deque|
+|589|[N-ary Tree Preorder Traversal](n-ary_tree_preorder_traversal.cpp)|O(n)|O(1)|Easy|stack|
+|590|[N-ary Tree Postorder Traversal](n-ary_tree_postorder_traversal.cpp)|O(n)|O(1)|Easy|stack|
+|820|[Short Encoding of Words](short_encoding_of_words.cpp)|O(n)|O(t)|Medium|tire|
 
 ## Math
 |#|Title|Time|Space|Difficulty|Note|
