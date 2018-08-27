@@ -89,7 +89,6 @@ bool BinaryHeap<Comparable>::isEmpty() const {
 template <typename Comparable>
 void BinaryHeap<Comparable>::makeEmpty() {
     currentSize = 0;
-    // vector array需要手动析构么?
 }
 
 template <typename Comparable>

@@ -22,11 +22,12 @@
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
 |26|[Remove Duplicates from Sorted Array](remove_duplicates_from_sorted_array.cpp)|O(N)|O(1)|Easy||
-|448|[Find All Numbers Disappeared in an Array](find_all_numbers_disappeared_in_an_array.cpp)|O(n)|O(1)|Easy|*= -1|
+|448|[Find All Numbers Disappeared in an Array](find_all_numbers_disappeared_in_an_array.cpp)|O(n)|O(1)|Easy||
 
 ## List
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
+|2|[Add Two Numbers](add_two_numbers.cpp)|O(n)|O(1)|Medium||
 |82|[Remove Duplicates from Sorted List II](remove_duplicates_from_sorted_list_2.cpp)|O(n)|O(1)|Medium||
 
 ## String
@@ -41,27 +42,35 @@
 |409|[Longest Palindrome](longest_palindrome.cpp)|O(n)|O(1)|Easy||
 |467|[Unique Substrings in Wraparound String](unique_substrings_in_wraparound_string.cpp)|O(n)|1|Medium|DP|
 
+## Stack
+|#|Title|Time|Space|Difficulty|Note|
+|:-|:-|:-|:-|:-|:-|
+|456|[132 Pattern](132_pattern.cpp)|O(n)|O(n)|Medium||
+
 ## Tree
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
-|94|[Binary Tree Inorder Traversal](binary_tree_inorder_traversal.cpp)|O(n)|O(1)|Medium|stack|
-|98|[Validate Binary Search Tree](validate_binary_search_tree.cpp)|O(n)|O(h)|Medium|recursion|
-|144|[Binary Tree Preorder Traversal](binary_tree_preorder_traversal.cpp)|O(n)|O(1)|Easy|stack|
-|173|[Binary Search Tree Iterator](binary_search_tree_iterator.cpp)|O(1)|O(h)|Medium|stack|
-|230|[Kth Smallest Element in a BST](kth_smallest_element_in_a_bst.cpp)|O(max(h,k))|O(min(h,k))|Medium|deque|
-|589|[N-ary Tree Preorder Traversal](n-ary_tree_preorder_traversal.cpp)|O(n)|O(1)|Easy|stack|
-|590|[N-ary Tree Postorder Traversal](n-ary_tree_postorder_traversal.cpp)|O(n)|O(1)|Easy|stack|
-|820|[Short Encoding of Words](short_encoding_of_words.cpp)|O(n)|O(t)|Medium|tire|
+|94|[Binary Tree Inorder Traversal](binary_tree_inorder_traversal.cpp)|O(n)|O(1)|Medium|Stack|
+|98|[Validate Binary Search Tree](validate_binary_search_tree.cpp)|O(n)|O(h)|Medium|Recursion|
+|144|[Binary Tree Preorder Traversal](binary_tree_preorder_traversal.cpp)|O(n)|O(1)|Easy|Stack|
+|173|[Binary Search Tree Iterator](binary_search_tree_iterator.cpp)|O(1)|O(h)|Medium|Stack|
+|230|[Kth Smallest Element in a BST](kth_smallest_element_in_a_bst.cpp)|O(max(h,k))|O(min(h,k))|Medium|Deque|
+|589|[N-ary Tree Preorder Traversal](n-ary_tree_preorder_traversal.cpp)|O(n)|O(1)|Easy|Stack|
+|590|[N-ary Tree Postorder Traversal](n-ary_tree_postorder_traversal.cpp)|O(n)|O(1)|Easy|Stack|
+|654|[Maximum Binary Tree](maximum_binary_tree.cpp)|O(n)|O(n)|Medium|Descending Stack|
+|820|[Short Encoding of Words](short_encoding_of_words.cpp)|O(n)|O(t)|Medium|Tire|
 
 ## Math
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
 |396|[Rotate Function](rotate_function.cpp)|O(n)|O(1)|Easy||
+|628|[Maximum Product of Three Numbers](maximum_product_of_three_numbers.cpp)|O(n)|O(1)|Easy||
+|672|[Bulb Switcher II](bulb_switcher_2.cpp)|O(1)|O(1)|Medium||
 
 ## Sort
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
-|646|[Maximum Length of Pair Chain](maximum_length_of_pair_chain.cpp)|O(nlogn)|O(1)|Medium|quick, DP|
+|646|[Maximum Length of Pair Chain](maximum_length_of_pair_chain.cpp)|O(nlogn)|O(1)|Medium|QuickSort, DP|
 
 ## Binary Search
 |#|Title|Time|Space|Difficulty|Note|
