@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 
     listenfd = Open_listenfd(port);
     while (1) {
-        connfdp = Malloc(sizeof(int));
+        connfdp = Malloc(sizeof(int)); //避免竞争
         *connfdp = Accept(listenfd, (SA *)&clientaddr, &clientlen);
         Pthread_create(&tid, NULL, thread, connfdp);
     }

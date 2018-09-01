@@ -4,6 +4,7 @@ nand2tetris
 *.o
 *.exe
 *.out
+test
 test.cpp
 demo.cpp
 cpp_primer/test.cpp
