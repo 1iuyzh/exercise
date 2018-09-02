@@ -114,8 +114,8 @@ public:
 };
 
 class thread_pool {
-    static thread_local work_stealing_queue* local_work_queue;
-    static thread_local unsigned my_index;
+    inline static thread_local work_stealing_queue* local_work_queue;
+    inline static thread_local unsigned my_index;
 
     typedef function_wrapper task_type;
 
@@ -126,8 +126,8 @@ class thread_pool {
     join_threads joiner; //保证线程池被销毁前完成所有工作线程
 
     void worker_thread(unsigned my_index_) {
-        //my_index = my_index_;
-        //local_work_queue = queues[my_index].get();
+        my_index = my_index_;
+        local_work_queue = queues[my_index].get();
         while (!done) //循环
             run_pending_task();
     }
