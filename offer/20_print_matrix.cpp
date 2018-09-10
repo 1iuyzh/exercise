@@ -33,7 +33,7 @@ void PrintMatrixInCircle(int** numbers, int columns, int rows, int start) {
         }
     }
 
-    if (start < endY && start < endY - 1) {
+    if (start < endX && start < endY - 1) {
         for (int i = endY - 1; i >= start + 1; i--) {
             int number = numbers[i][start];
             std::cout << number << ' ';
