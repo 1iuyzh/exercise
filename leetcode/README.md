@@ -53,6 +53,7 @@
 |94|[Binary Tree Inorder Traversal](binary_tree_inorder_traversal.cpp)|O(n)|O(1)|Medium|Stack|
 |98|[Validate Binary Search Tree](validate_binary_search_tree.cpp)|O(n)|O(h)|Medium|Recursion|
 |144|[Binary Tree Preorder Traversal](binary_tree_preorder_traversal.cpp)|O(n)|O(1)|Easy|Stack|
+|145|[Binary Tree Postorder Traversal](binary_tree_postorder_traversal.cpp)|O(n)|O(1)|Hard|Stack|
 |173|[Binary Search Tree Iterator](binary_search_tree_iterator.cpp)|O(1)|O(h)|Medium|Stack|
 |230|[Kth Smallest Element in a BST](kth_smallest_element_in_a_bst.cpp)|O(max(h,k))|O(min(h,k))|Medium|Deque|
 |589|[N-ary Tree Preorder Traversal](n-ary_tree_preorder_traversal.cpp)|O(n)|O(1)|Easy|Stack|
