@@ -1,7 +1,6 @@
 /*
  * 后序遍历二叉树
  */
-
 #include <iostream>
 #include <stack>
 #include <utility>
@@ -14,6 +13,7 @@ struct BinaryTreeNode {
     BinaryTreeNode(const int& _value) : value(_value), pLeft(nullptr), pRight(nullptr) {}
 };
 
+//循环版本
 void PostorderTraversal1(BinaryTreeNode* pRoot) {
     if (pRoot == nullptr)
         return;
@@ -51,6 +51,7 @@ void PostorderTraversal1(BinaryTreeNode* pRoot) {
     }
 }
 
+//递归版本
 void PostorderTraversal2(BinaryTreeNode* pRoot) {
     if (pRoot == nullptr)
         return;
