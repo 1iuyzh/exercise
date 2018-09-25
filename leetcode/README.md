@@ -12,6 +12,7 @@
 * Hash
 * Binary Search
 * Sort
+* Depth-First Search
 * Dynamic Programming
 
 ## Math
@@ -85,6 +86,11 @@
 |:-|:-|:-|:-|:-|:-|
 |31|[Next Permutation](next_permutation.cpp)|O(nlogn)|O(1)|Medium|Quicksort, Reverse|
 |646|[Maximum Length of Pair Chain](maximum_length_of_pair_chain.cpp)|O(nlogn)|O(1)|Medium|QuickSort, DP|
+
+## Depth-First Search
+|#|Title|Time|Space|Difficulty|Note|
+|:-|:-|:-|:-|:-|:-|
+|332|[Reconstruct Itinerary](reconstruct_itinerary.cpp)|O(t!/(n1!*n2!*...nk!))|O(t)|Medium||
 
 ## Dynamic Programming
 |#|Title|Time|Space|Difficulty|Note|
