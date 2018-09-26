@@ -33,8 +33,8 @@ class Solution {
 public:
     vector<string> findItinerary(vector<pair<string, string>> tickets) {
         unordered_map<string, map<string, int>> graph;
-        for (const auto &i : tickets) {
-            ++graph[i.first][i.second];
+        for (const auto &ticket : tickets) {
+            ++graph[ticket.first][ticket.second];
         }
         const string from{"JFK"};
         vector<string> res{from};
@@ -42,9 +42,8 @@ public:
         return res;
     }
 private:
-    bool routerHelper(const string& from, const int cnt, 
-    unordered_map<string, map<string, int>> &graph,
-    vector<string> &res) {
+    bool routerHelper(const string& from, const int cnt,
+    unordered_map<string, map<string, int>>& graph, vector<string>& res) {
         if (cnt == 0)
             return true;
         for (auto &to : graph[from]) {
