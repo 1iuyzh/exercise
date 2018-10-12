@@ -39,6 +39,7 @@
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
 |344|[Reverse String](reverse_string.cpp)|O(n)|O(1)|Easy||
+|551|[Student Attendance Record I](student_attendance_record_1.cpp)|O(n)|O(1)|Easy||
 
 ## List
 |#|Title|Time|Space|Difficulty|Note|
@@ -97,6 +98,7 @@
 |#|Title|Time|Space|Difficulty|Note|
 |:-|:-|:-|:-|:-|:-|
 |332|[Reconstruct Itinerary](reconstruct_itinerary.cpp)|O(t!/(n1!*n2!*...nk!))|O(t)|Medium||
+|695|[Max Area of Island](max_area_of_island.cpp)|O(n))|O(n)|Easy||
 
 ## Dynamic Programming
 |#|Title|Time|Space|Difficulty|Note|
